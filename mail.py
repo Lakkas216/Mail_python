@@ -8,9 +8,6 @@ from email import encoders
 def send_mail(sender_mail, receiver_mail, sender_mail_password, file_name, message_subject, message_content):
     smtp_server = 'smtp.gmail.com'
     port = 465
-    # destinateur = 'lakkas94410@gmail.com'
-    # password = '13octobre2004'
-    # destinataire = 'abdel.waheb.sakkal@gmail.com'
     nom_fichier = 'test.jpg'
     message = MIMEMultipart('alternative')
     message['Subject'] = 'envoie d\'un fichier'
@@ -31,4 +28,3 @@ def send_mail(sender_mail, receiver_mail, sender_mail_password, file_name, messa
         server.login(sender_mail, sender_mail_password)
         server.sendmail(sender_mail, receiver_mail, message.as_string())
         
-send_mail('lakkas94410@gmail.com', '13octobre2004', 'abdel.waheb.sakkal@gmail.com', 'test.jpg', 'Test python', "Ceci est un test d'envoi de mail en python") 
